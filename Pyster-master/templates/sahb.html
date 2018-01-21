@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+      <title>URL SHORTNER</title> 
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%;position: relative;text-align: center;}
+.bgimg {
+    background-image: url('background.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<style type="text/css"> 
+    .help
+    {
+      position: absolute;
+      left :  400px;
+      right: 200px;
+      padding: 10px;
+      font-size: 20px;
+      font-color: blue;
+    }
+  </style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-teal">
+   {% if not short_url %}
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">My URL Shortner!</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <h1 class="w3-large w3-center" style="color: black"><strong>Converts your long URL into an awesomely short one!</strong></h1>
+     <form class="form-inline" id="myform" method="post" action=" ">
+          <div class="form-group">
+            <label class="sr-only" for="url">URL</label>
+            <div class="input-group">
+              <div class="input-group-addon" style="color: teal">
+                <strong>Link :    </strong></div>
+            <form method="post" class="navbar-form navbar-right" action="">
+                  <input type="text" id="url" name="url" placeholder="URL" />
+                  <button type="submit" name="submit" >Submit</button>
+            </form>
+            </div>
+          </div>
+        </form>
+  </div>
+
+  </div>
+  {% else %}
+      <p class="help">CONGRATULATIONS !!!! Your shortened URL is <a href="{{ short_url }}">{{ short_url }}</p>
+   {% endif %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+    </script>
+</body>
+            <!--<body>
+            <a  href="#" style="left:600px">URL Shorter</a>
+               <br />
+               {% if not short_url %}
+                     <h4>Enter URL to shorten.</h4>
+                        <form method="post" class="navbar-form navbar-right" action="">
+                              <input type="text" id="url" name="url" placeholder="URL" />
+                              <button type="submit" name="submit" >Submit</button>
+                        </form>
+               {% else %}
+               <div>
+                  Enjoy, your shortened URL is: <a href="{{short_url}}"> {{short_url}}</a>
+               </div>
+               {% endif %}
+      </body>-->
+
+   </html>
